@@ -19,7 +19,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "storybook-docs": "storybook dev --docs",
-    "build-storybook-docs": "storybook build --docs"
+    "build-storybook-docs": "storybook build --docs",
+    "chromatic": "npx chromatic --project-token=chpt_41bbe2867401c53"
   },
   "eslintConfig": {
     "extends": [
@@ -56,5 +57,7 @@
     "prop-types": "^15.8.1",
     "storybook": "^7.4.5",
     "webpack": "^5.88.2"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "storybook-react@0.1.0"
 }
