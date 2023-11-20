@@ -1,0 +1,66 @@
+{/* Checkbox.mdx */}
+
+import { Canvas, Meta, Story, Primary, Controls, Description,  Title, Subtitle, Source, Stories, ArgTypes} from '@storybook/blocks';
+import * as HomePageStories from './HomePage.stories'
+import * as InputStories from './Input.stories';
+
+<Meta of={InputStories} title="Docs"/>
+
+# Page
+[Home Page link](?path=/docs/basic-input-stories--number)
+
+This is how the layout will ususally look like.
+
+## Title
+<Title>Input Stories</Title>
+
+## Subtitle
+<Subtitle />
+
+## Default Description
+<Description/>
+
+## Description of stories
+<Description of={InputStories}/>
+
+## Description of input text
+<Description of={InputStories.Text}/>
+
+## Description of input number
+<Description of={InputStories.Number}/>
+
+
+## Text Canvas
+
+<Canvas additionalActions={[
+    {
+      title: 'Open in GitHub',
+      onClick: () => {
+        window.open(
+          'https://github.com/storybookjs/storybook/blob/next/code/ui/blocks/src/examples/Button.stories.tsx',
+          '_blank'
+        );
+      },
+    }
+  ]} of={InputStories.Text} />
+
+  ## Number
+<Canvas of={InputStories.Number} />
+
+## Primary
+<Primary/>
+
+## Controls
+<Controls/>
+
+## Text story
+<Story of={InputStories.Text}/>
+
+## All stories
+<Stories title='Input Stories'/>
+
+## Source
+<Source />
+
+## Arg Types
+<ArgTypes of={InputStories} />
