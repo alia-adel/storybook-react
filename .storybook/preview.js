@@ -1,11 +1,8 @@
 /** @type { import('@storybook/react').Preview } */
 
-import { Title, Subtitle, Description, Primary, Controls, Stories, DocsContainer } from '@storybook/blocks';
+import { Title, Subtitle, Description, Primary, Controls, Stories, DocsContainer, ArgTypes } from '@storybook/blocks';
 
-const ExampleContainer = ({ children, ...props }) => {
-  return <DocsContainer {...props}>{children}</DocsContainer>;
-};
-
+import '../src/components/index.css'
 const preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
@@ -16,8 +13,8 @@ const preview = {
       },
     },
     options: {
-      storySort: (a, b) =>
-        a.id === b.id ? 0 : a.id.localeCompare(b.id, undefined, { numeric: true }),
+      // storySort: (a, b) =>
+      //   a.id === b.id ? 0 : a.id.localeCompare(b.id, undefined, { numeric: true }),
     },
     backgrounds: {
       values: [
@@ -26,7 +23,6 @@ const preview = {
       ],
     },
     docs: {
-      // container: ExampleContainer,
       toc: {
         title: 'Table Of content'
       },
@@ -35,9 +31,8 @@ const preview = {
           <Title />
           <Subtitle />
           <Description />
-          <Primary />
-          <Controls />
           <Stories />
+          <Controls />
         </>
       ),
     },

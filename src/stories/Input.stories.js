@@ -1,14 +1,22 @@
 import React from 'react'
 import Input from '../components/Input'
+import { userEvent, within } from '@storybook/testing-library'
 
 /**
  * Input Stories
  */
 const meta = {
     id: 'basic-input-stories',
-    title: 'Components/Input',
+    title: 'Components/Forum/Input',
     subTitle: 'Test SubTitle',
     component: Input,
+    render: (args, {loaded: {todo}}) => <Input {...args} {...todo}></Input>,
+    loaders: [
+        async () => ({
+            todo: await (await fetch('https://jsonplaceholder.typicode.com/todos/1')).json(),
+        }),
+    ],
+    theme: 'dark',
     argTypes: {// More on argTypes: https://storybook.js.org/docs/react/api/argtypes
         type: {
             type: 'string',
@@ -16,6 +24,10 @@ const meta = {
                 defaultValue: { summary: 'text' },
                 type: { summary: 'string' },
             }
+        },
+        labelColor: {
+            name: 'Label Color',
+            control: 'color'
         },
         borderColor: {
             name: 'Border Color',
@@ -44,7 +56,7 @@ const meta = {
     },
     tags: ['autodocs'],
     layout: 'fullscreen',
-    // decorators: [(Story) => <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '20px', backgroundColor: 'skyblue', height: '300px' }}><Story /></div>],
+    decorators: [(Story) => <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '20px', backgroundColor: 'skyblue', height: '300px' }}><Story /></div>],
     parameters: {
         componentSubtitle: 'SubTitle example....',
         docs: {
@@ -75,6 +87,14 @@ export const Text = {
                 { name: 'blue', value: '#00f' },
             ],
         }
+    },
+    play: async ({ canvasElement }) => {
+        const canvas = within(canvasElement);
+        const emailInput = canvas.getByTestId('inputLabel');
+    
+        await userEvent.type(emailInput, 'example-email@email.com', {
+        delay: 100,
+        });
     }
 }
 
