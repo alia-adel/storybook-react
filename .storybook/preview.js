@@ -2,7 +2,7 @@
 
 import { Title, Subtitle, Description, Primary, Controls, Stories, DocsContainer, ArgTypes } from '@storybook/blocks';
 
-import '../src/components/index.css'
+import '../src/index.css'
 const preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },

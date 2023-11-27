@@ -10,7 +10,7 @@ const Input = ({ type = 'text', placeholder = new Date(), labelColor = 'black', 
     return <div style={parentStyle ? { ...parentStyle } : {}}>
         TODO title: {title}<br/>
         {hasLabel && <label htmlFor='inputLabel' style={{color: labelColor}}>{type} input:&nbsp;</label>}
-        <input id='inputLabel' data-testid='inputLabel' type={type} placeholder={placeholder.toString()} style={{ width: '150px', borderColor: borderColor }} />
+        <input class='form-input' id='inputLabel' data-testid='inputLabel' type={type} placeholder={placeholder.toString()} style={{ width: '150px', borderColor: borderColor }} />
     </div>
 }
 
