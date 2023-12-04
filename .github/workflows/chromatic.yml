@@ -1,8 +1,9 @@
 name: Chromatic job
 run-name: Chromatic job
-runs-on: [push]
+on: [push]
 jobs:
   chromatic:
+    runs-on: ubuntu-latest
     steps:
       # ... other steps
       - uses: chromaui/action@latest
