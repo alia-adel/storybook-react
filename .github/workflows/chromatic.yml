@@ -1,6 +1,6 @@
 name: Chromatic job
 run-name: Chromatic job
-on: [push]
+runs-on: [push]
 jobs:
   chromatic:
     steps:
