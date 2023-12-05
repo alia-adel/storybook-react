@@ -1,5 +1,8 @@
 {
   "name": "storybook-react",
+  "description": "storybook tutorial",
+  "main": "dist/cjs/index.js",
+  "repository": "https://github.com/alia-adel/storybook-react.git",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
