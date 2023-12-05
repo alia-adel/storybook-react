@@ -26,4 +26,5 @@ jobs:
         with:
           #👇 Chromatic projectToken, see https://storybook.js.org/tutorials/design-systems-for-developers/react/en/review/ to obtain it
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-      - run: echo " chromatic token ${{ secrets.CHROMATIC_PROJECT_TOKEN }}""
+      - run: echo " chromatic token ${{ secrets }}"
+      - run: echo " chromatic token ${{ env }}"
