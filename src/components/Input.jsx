@@ -9,7 +9,7 @@ import PropTypes from 'prop-types'
 const Input = ({ type = 'text', placeholder = new Date(), labelColor = 'black', borderColor = 'grey', hasLabel = false, parentStyle, title, ...props }) => {
     return <div style={parentStyle ? { ...parentStyle } : {}}>
         TODO title: {title}<br/>
-        {hasLabel && <label htmlFor='inputLabel' style={{color: labelColor, textDecoration: 'underline', display: 'block'}}>{type} input:&nbsp;</label>}
+        {hasLabel && <label htmlFor='inputLabel' style={{color: labelColor, display: 'block'}}>{type} input:&nbsp;</label>}
         <input class='form-input' id='inputLabel' data-testid='inputLabel' type={type} placeholder={placeholder.toString()} style={{ width: '150px', borderColor: borderColor }} />
     </div>
 }
