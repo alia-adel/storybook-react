@@ -1,12 +1,13 @@
 import React from 'react'
 import Input from '../components/Input'
 import { userEvent, within } from '@storybook/testing-library'
+import { expect } from '@storybook/jest'
 
 /**
  * Input Stories
  */
 const meta = {
-    id: 'basic-input-stories',
+    // id: 'basic-input-stories',
     title: 'Components/Forum/Input',
     subTitle: 'Test SubTitle',
     component: Input,
@@ -91,10 +92,13 @@ export const Text = {
     play: async ({ canvasElement }) => {
         const canvas = within(canvasElement);
         const emailInput = canvas.getByTestId('inputLabel');
+        const _value = 'example-email@email.com'
     
-        await userEvent.type(emailInput, 'example-email@email.com', {
-        delay: 100,
+        await userEvent.type(emailInput, _value, {
+            delay: 100,
         });
+        // Adding tests to test component intercations
+        await expect(emailInput.value).toBe(_value)
     }
 }
 
@@ -105,7 +109,18 @@ export const Number = {
     args: {
         type: 'number',
         borderColor: 'green',
-        hasLabel: true
+        hasLabel: true,
+        testId: 'numberId'
+    },
+    play: async ({ canvasElement }) => {
+        const canvas = within(canvasElement);
+        const numberInput = canvas.getByTestId('numberId');
+        const _value = '12345'
+        await userEvent.type(numberInput, _value, {
+            delay: 100,
+        });
+        // Adding tests to test component intercations
+        await expect(numberInput.value).toBe(_value)
     }
 }
 
