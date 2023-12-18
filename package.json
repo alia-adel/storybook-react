@@ -1,5 +1,8 @@
 {
   "name": "storybook-react",
+  "description": "storybook tutorial",
+  "main": "dist/cjs/index.js",
+  "repository": "https://github.com/alia-adel/storybook-react.git",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,6 +24,7 @@
     "build-storybook": "storybook build",
     "storybook-docs": "storybook dev --docs",
     "build-storybook-docs": "storybook build --docs",
+    "test-storybook": "test-storybook",
     "chromatic": "npx chromatic --project-token=chpt_41bbe2867401c53"
   },
   "eslintConfig": {
@@ -45,6 +49,7 @@
   "devDependencies": {
     "@storybook/addon-a11y": "^7.5.3",
     "@storybook/addon-controls": "^7.5.3",
+    "@storybook/addon-coverage": "^1.0.0",
     "@storybook/addon-essentials": "^7.5.3",
     "@storybook/addon-interactions": "^7.5.3",
     "@storybook/addon-links": "^7.5.3",
@@ -55,6 +60,7 @@
     "@storybook/preset-create-react-app": "^7.5.3",
     "@storybook/react": "^7.5.3",
     "@storybook/react-webpack5": "^7.5.3",
+    "@storybook/test-runner": "^0.16.0",
     "@storybook/testing-library": "^0.2.2",
     "babel-plugin-named-exports-order": "^0.0.2",
     "chromatic": "^9.1.0",

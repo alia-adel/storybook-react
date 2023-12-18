@@ -1,4 +1,8 @@
 import { Header } from './Header';
+import { within } from '@storybook/testing-library'
+import { expect } from '@storybook/jest'
+
+const userName = 'Jane Doe'
 
 export default {
   title: 'Example/Header',
@@ -14,9 +18,15 @@ export default {
 export const LoggedIn = {
   args: {
     user: {
-      name: 'Jane Doe',
+      name: userName,
     },
   },
+    play: async ({ canvasElement }) => {
+        const canvas = within(canvasElement);
+        const userNameElm = canvas.getByTestId('user-name');
+        // Adding tests to test component intercations
+        await expect(userNameElm).toHaveTextContent(userName)
+    }
 };
 
 export const LoggedOut = {};
