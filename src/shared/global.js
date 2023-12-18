@@ -7,7 +7,7 @@ import { css } from '@emotion/react';
 
 export const bodyStyles = css`
 padding: 32px;
-      background-color: hotpink;
+      background-color: #fff;
       font-size: 24px;
       border-radius: 4px;
 `;

@@ -57,7 +57,7 @@ const meta = {
     },
     tags: ['autodocs'],
     layout: 'fullscreen',
-    decorators: [(Story) => <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '20px', backgroundColor: 'skyblue', height: '300px' }}><Story /></div>],
+    decorators: [(Story) => <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '20px', backgroundColor: 'lightgray', height: '300px' }}><Story /></div>],
     parameters: {
         componentSubtitle: 'SubTitle example....',
         docs: {
